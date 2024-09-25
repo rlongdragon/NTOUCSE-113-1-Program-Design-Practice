@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 int main() {
-  int k;
+  int t;
   double x;
   double ans = 0;
-  int i;
+  int k;
 
-  while (scanf("%d%lf", &k, &x) != EOF) {
-    for (i = 0; i < k + 1; i++) {
-      ans += (pow(-1, i) * pow(x, 1 + 2 * i)) / (1 + 2 * i);
+  while (scanf("%d%lf", &t, &x) != EOF) {
+    for (k = 0; k < t + 1; k++) {
+      ans += (pow(-1, k) * pow(x, 1 + 2 * k)) / (1 + 2 * k);
     }
 
     printf("%.5lf\n", ans);
