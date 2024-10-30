@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-float findMax(float originalInput[50], int startIndex, int endIndex) {
+float findMax(float originalInput[50], int n, int startIndex, int endIndex) {
   startIndex = startIndex < 0 ? 0 : startIndex;
-  endIndex = endIndex > 50 ? 50 : endIndex;
+  endIndex = endIndex > n ? n : endIndex;
 
   float max = originalInput[startIndex];
   for (int i = startIndex; i < endIndex; i++) {
@@ -26,7 +26,7 @@ int main() {
 
 
   for (int i = -1 * padding; i < n ; i += strike) {
-    printf("%3d,%8f\n", count, findMax(originalInput, i, i + poolSize));
+    printf("%3d,%8f\n", count, findMax(originalInput, n, i, i + poolSize));
     count++;
   }
 
