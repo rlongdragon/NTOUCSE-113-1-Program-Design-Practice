@@ -35,16 +35,17 @@ int higher(struct card A, struct card B) {
     return 0;
   } else if (indexA < indexB) {
     return 1;
+  }
+
+  indexA = indexOf(A.suit, suit, 4);
+  indexB = indexOf(B.suit, suit, 4);
+  
+  if (indexA > indexB) {
+    return 0;
+  } else if (indexA < indexB) {
+    return 1;
   } else {
-    indexA = indexOf(A.suit, suit, 4);
-    indexB = indexOf(B.suit, suit, 4);
-    if (indexA > indexB) {
-      return 0;
-    } else if (indexA < indexB) {
-      return 1;
-    } else {
-      return -1;
-    }
+    return -1;
   }
 }
 
