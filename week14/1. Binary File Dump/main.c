@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
   } else {
     scanf("%s", filename);
   }
+
   ptr = fopen(filename, "rb");
 
   if (ptr == NULL) {
@@ -25,11 +26,9 @@ int main(int argc, char* argv[]) {
   }
 
   while ((bytesRead = fread(buffer, 1, sizeof(buffer), ptr)) > 0) {
-    if (counter % 16 == 0) {
-      printf("%08X: ", counter);  // 以十六進位格式輸出偏移量
-    }
+    printf("%08X: ", counter);  // 以十六進位格式輸出偏移量
 
-    for (size_t i = 0; i < bytesRead; i++) {
+    for (int i = 0; i < bytesRead; i++) {
       printf("%02X ", buffer[i]);  // 以十六進位格式輸出每個位元組
     }
 
